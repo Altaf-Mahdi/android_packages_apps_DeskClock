@@ -1,7 +1,7 @@
 LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 
-LOCAL_RESOURCE_DIR := packages/apps/DeskClock/res
+LOCAL_RESOURCE_DIR := external/android-snackbar/res packages/apps/DeskClock/res
 LOCAL_RESOURCE_DIR += frameworks/opt/datetimepicker/res
 
 ifeq ($(TARGET_BUILD_APPS),)
@@ -27,11 +27,13 @@ LOCAL_STATIC_JAVA_LIBRARIES += android-support-v13
 LOCAL_STATIC_JAVA_LIBRARIES += android-support-v7-appcompat
 LOCAL_STATIC_JAVA_LIBRARIES += android-support-v7-gridlayout
 LOCAL_STATIC_JAVA_LIBRARIES += org.cyanogenmod.platform.sdk
+LOCAL_STATIC_JAVA_LIBRARIES += android-snackbar
 
 LOCAL_AAPT_FLAGS := --auto-add-overlay
 LOCAL_AAPT_FLAGS += --extra-packages android.support.v7.appcompat
 LOCAL_AAPT_FLAGS += --extra-packages android.support.v7.gridlayout
 LOCAL_AAPT_FLAGS += --extra-packages com.android.datetimepicker
+LOCAL_AAPT_FLAGS += --extra-packages com.nispok.snackbar
 
 LOCAL_PROGUARD_FLAG_FILES := proguard.flags
 
